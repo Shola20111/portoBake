@@ -8,7 +8,7 @@ type boldButtonCompProps = {
 export default function boldButtonComp({ text, size }:boldButtonCompProps) {
   return (
     <div>
-        <button className={`${size}`}>
+        <button className={`${size} cursor-pointer bg-[#381209] hover:opacity-80`}>
             {text}
         </button>
     </div>
