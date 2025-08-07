@@ -1,5 +1,6 @@
 import Image from "next/image";
-import BannerComp from "./components/modules/bannerComp";
+import BannerComp from "@/components/modules/bannerComp";
+import CommentSide from "@/components/modules/CommentSide";
 
 
 export default function Home() {
@@ -9,10 +10,12 @@ export default function Home() {
 
   return (
     <>
-      <section className="w-full h-auto border pt-[100px] absolute">
+      <section className="w-full h-auto mt-[100px] flex flex-col absolute">
         
         
         <BannerComp />
+        <CommentSide />
+    
       </section>
       //overall background
       <div className="">
