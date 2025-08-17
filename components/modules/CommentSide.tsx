@@ -58,51 +58,55 @@ const datas = [
 
 
 const CommentSide = () => {
+ const scrollRef = useRef(null)
 
-  const scrollRef = useRef<HTMLDivElement>(null)
-
-  const scroll = (direction: 'left' | 'right') => {
-    if (scrollRef.current) {
-      const scrollAmount = window.innerWidth < 680 ? 510 : 540
-      scrollRef.current.scrollBy({
-        left: direction === 'left' ? -scrollAmount : scrollAmount,
-        behavior: 'smooth',
-      })
-    }
+  const prev = ()=>{
+    scrollRef.current.scrollTo({
+      left:scrollRef.current.scrollLeft - 410,
+      behavior: 'smooth'
+    })
   }
 
+  const next = ()=>{
+    scrollRef.current.scrollTo({
+      left:scrollRef.current.scrollLeft + 410,
+      behavior: 'smooth'
+    })
+  }
+
+  
   return (
-    <section className='flex flex-col justify-center items-center w-full gap-10 bg-[#673B2B] h-[700px]'>
-      <h1 className='text-[40px] text-[#fff]' style={{fontFamily:'Bebas Neue, sans-serif'}} >
+    <section className='flex flex-col justify-center items-center w-full  bg-[#673B2B] h-[700px] relative'>
+      <h1 className='text-[30px] md:text-[40px] text-[#fff] text-center' style={{fontFamily:'Bebas Neue, sans-serif'}} >
         WHAT OUR CUSTOMERS ARE SAYING:
       </h1> 
 
-        <div className=" px-25 flex justify-center items-center relative ">
+        <div className=" px-10 md:px-15 bg-[#673B2B] h-auto w-full flex justify-center items-center ">
       
       {/* Left Arrow */}
       <button
-        onClick={() => scroll('left')}
-        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 bg-white/70 rounded-full p-2 hover:bg-white transition"
+        onClick={() => prev()}
+        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full p-2 hover:bg-white transition"
       >
         <MdChevronLeft size={24} />
       </button>
 
       {/* Right Arrow */}
       <button
-        onClick={() => scroll('right')}
-        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 bg-white/70 rounded-full hover:bg-white transition"
+        onClick={() => next()}
+        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full hover:bg-white transition"
       >
         <MdChevronRight size={24} />
       </button>
 
       <div
         ref={scrollRef}
-        className="flex justify-center overflow-x-auto scrollbar-hide scroll-smooth "
+        className="flex justify-center overflow-x-auto scrollbar-hide gap-4 scroll-smooth "
       >
         {datas.map((data, index) => (
           <div
             key={index}
-            className="flex m-2 md-0 w-full md:w-1/2 lg:w-1/3"
+            className="flex m-2 mb-0 w-full md:w-[500px] lg:w-1/3"
           >
             <CommentSideCard
               text1={data.text1}
@@ -120,3 +124,4 @@ const CommentSide = () => {
 }
 
 export default CommentSide
+
