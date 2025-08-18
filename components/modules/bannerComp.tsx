@@ -10,12 +10,12 @@ const bannerComp = () => {
         <div className=' bg-[#FFF0CC] flex flex-col items-center justify-center h-full  gap-10 p-20'>
           <div>
             <h1 className='uppercase text-[#673B2B] text-[40px] md:text-[70px] leading-[95%] font-medium text-center ' style={{fontFamily:'Bebas Neue, sans-serif'}}>
-              Welcome to Porto's Nationwide Shipping
+              Welcome to Porto&apos;s Nationwide Shipping
             </h1>
           </div>
           <div>
             <p className=' text-[1rem] md:text-[1.4rem] text-center text-[#673B2B]' style={{fontFamily:'Montserrat, HelveticaNeue, Helvetica Neue, sans-serif'}}>
-              Turn any occasion into a celebration with our easy-to-bake pastries or award-winning cakes - LA's best bakery delivered to you, perfect for gifting near or far!
+              Turn any occasion into a celebration with our easy-to-bake pastries or award-winning cakes - LA&apos;s best bakery delivered to you, perfect for gifting near or far!
             </p>
           </div>
           <div className='relative '>
@@ -40,7 +40,7 @@ const bannerComp = () => {
             </div>
             <div>
               <p className='font-Montserrat, HelveticaNeue, Helvetica Neue, sans-serif text-[#673B2B] text-[15px] md:text-[18px] text-center' style={{fontFamily:'Montserrat, HelveticaNeue, Helvetica Neue, sans-serif'}}>
-                Back for <big className='font-bold'>a limited time!</big> Our flakiest, cheesiest favorite is here. Buttery, golden pastry filled with warm, melty spinach and cheese. It’s the snack you’ve been craving.
+                Back for <big className='font-bold'>a limited time!</big> Our flakiest, cheesiest favorite is here. Buttery, golden pastry filled with warm, melty spinach and cheese. It&apos;s the snack you&apos;ve been craving.
               </p>
             </div>
             <div className=''>

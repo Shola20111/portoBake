@@ -1,5 +1,5 @@
 
-'use client' // Must be at the very top
+'use client'
 
 import React, { useRef } from 'react'
 import Image from 'next/image'
@@ -58,21 +58,41 @@ const datas = [
 
 
 const CommentSide = () => {
- const scrollRef = useRef(null)
+//  const scrollRef = useRef(null)
 
-  const prev = ()=>{
-    scrollRef.current.scrollTo({
-      left:scrollRef.current.scrollLeft - 410,
-      behavior: 'smooth'
-    })
-  }
+//   const prev = ()=>{
+//     scrollRef.current?.scrollTo({
+//       left:(scrollRef.current?.scrollLeft || 0) - 410,
+//       behavior: 'smooth'
+//     })
+//   }
 
-  const next = ()=>{
-    scrollRef.current.scrollTo({
-      left:scrollRef.current.scrollLeft + 410,
-      behavior: 'smooth'
-    })
-  }
+//   const next = ()=>{
+//     scrollRef.current?.scrollTo({
+//       left:(scrollRef.current?.scrollLeft || 0) + 410,
+//       behavior: 'smooth'
+//     })
+//   }
+
+const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const prev = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        left: scrollRef.current.scrollLeft - 410,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const next = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        left: scrollRef.current.scrollLeft + 410,
+        behavior: "smooth",
+      });
+    }
+  };
 
   
   return (
@@ -86,7 +106,7 @@ const CommentSide = () => {
       {/* Left Arrow */}
       <button
         onClick={() => prev()}
-        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full p-2 hover:bg-white transition"
+        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full  bg-white hover:bg-white transition"
       >
         <MdChevronLeft size={24} />
       </button>
@@ -94,7 +114,7 @@ const CommentSide = () => {
       {/* Right Arrow */}
       <button
         onClick={() => next()}
-        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full hover:bg-white transition"
+        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white hover:bg-white transition"
       >
         <MdChevronRight size={24} />
       </button>

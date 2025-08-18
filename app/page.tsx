@@ -2,8 +2,8 @@
 import Image from "next/image";
 import BannerComp from "@/components/modules/bannerComp";
 import CommentSide from "@/components/modules/CommentSide";
-import { VscChevronLeft, VscChevronRight } from "react-icons/vsc";
-import { useRef, useState } from "react";
+
+
 
 
 export default function Home() {
@@ -19,13 +19,14 @@ export default function Home() {
         
         <BannerComp />
         <CommentSide />
-
+        
+        
         
     
       </section>
 
 
-      //overall background
+      {/*overall background*/}
       <div className="">
           <Image src='/assets/background.png' width='500' height='1000' alt="Background" className="w-full h-full" />
       </div>    

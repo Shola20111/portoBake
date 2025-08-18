@@ -5,6 +5,8 @@ import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { Bebas_Neue } from 'next/font/google';
+import { VscChevronDown } from 'react-icons/vsc';
+import DropDown from './DropDown';
 
 
 
@@ -22,16 +24,28 @@ const handleShowNav = ()=>{
   setShowNav(!showNav)
 }
 
+const [openShop, setOpenShop] = useState(false)
+const handleOpenShop =()=>{
+  setOpenShop(!openShop)
+}
+
+const [openHelp, setOpenHelp] = useState(false)
+const handleOpenHelp =()=>{
+  setOpenHelp(!openHelp)
+}
+
+
+
 
 
   return (
-    <header className='flex justify-between items-center w-[100%] h-[100px] mx-auto fixed z-50 px-[5%] bg-[#fff] '>
+    <header className="flex justify-between items-center w-[100%] h-[100px] mx-auto fixed z-50 px-[5%] bg-[#fff]">
       <div className="w-[75%] lg:w-[30%] h-[90%] flex items-center ">
         <div className="max-w-[full] max-h-[60px] flex">
           <Image src='/assets/porto-logo.png' width='120' height='70' alt="Porto Logo" className="" />
         </div>
         <div className="ml-5 w-full">
-          <h1 className="text-[25px] md:text-[20px] lg:text-[25px] text-[#662F1D] font-normal leading-[22px] tracking-wide uppercase " style={{fontFamily:'Bebas Neue, sans-serif'}}>Porto's Bake at Home</h1>
+          <h1 className="text-[25px] md:text-[20px] lg:text-[25px] text-[#662F1D] font-normal leading-[22px] tracking-wide uppercase" style={{fontFamily:'Bebas Neue, sans-serif'}}>Porto&apos;s Bake at Home</h1>
         </div>
       </div>
       <div className="w-[25%]lg:w-[70%] flex justify-end items-center gap-5 pr-5 ">
@@ -40,13 +54,68 @@ const handleShowNav = ()=>{
             <li><Link href='/menu'>Menu</Link></li>
           
          
-            <li><Link href='/shop'>Shop</Link></li>
+            <li onClick={handleOpenShop} className={`flex justify-center items-center cursor-pointer ${openShop? 'py-3 px-1 rounded-t-2xl text-white bg-[#673b2b]': ''} relative`}>
+              <div>
+                Shop
+              </div>
+              <div>
+                <div className="w-3 h-3">
+                  <VscChevronDown className={`w-full h-full ${openShop? 'rotate-[180deg] bg-amber-800': ''} `}/>
+                </div>
+              </div>
+              {
+                openShop?
+                <ol className='flex flex-col justify-center w-[200px] h-auto bg-[#673B2B] absolute bottom-[-90] left-0'>
+                  <li>
+                    <Link href='/shop'></Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                </ol> :
+                ''
+              }  
+            </li>
           
          
             <li><Link href='/rewards'>Rewards</Link></li>
           
          
-            <li><Link href='/help'>Help</Link></li>
+            <li onClick={handleOpenHelp} className={`flex justify-center items-center cursor-pointer ${openHelp? 'py-3 px-1 rounded-t-2xl text-white bg-[#673b2b]': ''} relative`}>
+              <div>
+                Help
+              </div>
+              <div>
+                <div className="w-3 h-3">
+                  <VscChevronDown 
+                  className={`w-full h-full ${openHelp? 'rotate-[180deg] bg-amber-800': ''} `}/>
+                </div>
+              </div>
+              {
+                openHelp?
+                <ol className='flex flex-col justify-center w-[200px] h-auto bg-[#673B2B] absolute bottom-[-90] left-0'>
+                  <li>
+                    <Link href='/shop'></Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                </ol> :
+                ''
+              }  
+            </li>
           
          
             <li><Link href='/corperate-orders'>Corporate Orders</Link></li>
