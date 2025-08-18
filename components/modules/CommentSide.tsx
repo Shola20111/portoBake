@@ -86,7 +86,7 @@ const CommentSide = () => {
       {/* Left Arrow */}
       <button
         onClick={() => prev()}
-        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full p-2 hover:bg-white transition"
+        className="absolute left-2 top-1/2 z-10 -translate-y-1/2 rounded-full  bg-white hover:bg-white transition"
       >
         <MdChevronLeft size={24} />
       </button>
@@ -94,7 +94,7 @@ const CommentSide = () => {
       {/* Right Arrow */}
       <button
         onClick={() => next()}
-        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full hover:bg-white transition"
+        className="absolute right-2 top-1/2 z-10 -translate-y-1/2 rounded-full bg-white hover:bg-white transition"
       >
         <MdChevronRight size={24} />
       </button>
