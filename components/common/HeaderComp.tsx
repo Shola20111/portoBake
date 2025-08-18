@@ -25,13 +25,13 @@ const handleShowNav = ()=>{
 
 
   return (
-    <header className='flex justify-between items-center w-[100%] h-[100px] mx-auto fixed z-50 px-[5%] bg-[#fff] '>
+    <header className="flex justify-between items-center w-[100%] h-[100px] mx-auto fixed z-50 px-[5%] bg-[#fff]">
       <div className="w-[75%] lg:w-[30%] h-[90%] flex items-center ">
         <div className="max-w-[full] max-h-[60px] flex">
           <Image src='/assets/porto-logo.png' width='120' height='70' alt="Porto Logo" className="" />
         </div>
         <div className="ml-5 w-full">
-          <h1 className="text-[25px] md:text-[20px] lg:text-[25px] text-[#662F1D] font-normal leading-[22px] tracking-wide uppercase " style={{fontFamily:'Bebas Neue, sans-serif'}}>Porto's Bake at Home</h1>
+          <h1 className="text-[25px] md:text-[20px] lg:text-[25px] text-[#662F1D] font-normal leading-[22px] tracking-wide uppercase" style={{fontFamily:'Bebas Neue, sans-serif'}}>Porto&apos;s Bake at Home</h1>
         </div>
       </div>
       <div className="w-[25%]lg:w-[70%] flex justify-end items-center gap-5 pr-5 ">

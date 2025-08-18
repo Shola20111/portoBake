@@ -25,7 +25,7 @@ export default function Home() {
       </section>
 
 
-      //overall background
+      {/*overall background*/}
       <div className="">
           <Image src='/assets/background.png' width='500' height='1000' alt="Background" className="w-full h-full" />
       </div>    

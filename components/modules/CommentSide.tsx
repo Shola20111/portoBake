@@ -1,5 +1,5 @@
 
-'use client' // Must be at the very top
+'use client'
 
 import React, { useRef } from 'react'
 import Image from 'next/image'

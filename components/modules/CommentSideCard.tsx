@@ -5,34 +5,10 @@ interface CommentSideCardProps {
   text1: string
   text2: string
   name: string
-  image: string // ✅ string, not JSX.Element
+  image: string 
 }
 
-//   const CommentSideCard = ({ text1, text2, name, image }:CommentSideCardProps) => {
-//   return (
-//     <div className='flex flex-col p-5 gap-5 text-[20px] bg-white'>
-//         <div>
-//           <p>
-//             {text1}
-//           </p>
-//         </div>
-//         <div className='flex gap-5'>
-//           <div>
-//             {image}
-//           </div>
-//           <div className='flex flex-col '>
-//             <div>{name}</div>
-//             <div>{text2}</div>
-//           </div>
-//         </div>
-        
-        
-//     </div>
-//   )
-// }
-
-// export default CommentSideCard
-const CommentSideCard = ({ text1, text2, name, image }: CommentSideCardProps) => {
+const CommentSideCard = ({ text1, text2, name, image }:CommentSideCardProps) => {
   return (
     <div className="p-5 bg-white flex flex-col gap-10 rounded-md shadow-md w-[380px] h-[350px]"  style={{fontFamily:'Montserrat, HelveticaNeue, Helvetica Neue, sans-serif'}}>      
       <p className="text-[18px] w-[100%] text-black ">{text1}</p>
