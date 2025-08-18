@@ -2,8 +2,8 @@
 import Image from "next/image";
 import BannerComp from "@/components/modules/bannerComp";
 import CommentSide from "@/components/modules/CommentSide";
-import { VscChevronLeft, VscChevronRight } from "react-icons/vsc";
-import { useRef, useState } from "react";
+
+
 
 
 export default function Home() {
@@ -19,7 +19,8 @@ export default function Home() {
         
         <BannerComp />
         <CommentSide />
-
+        
+        
         
     
       </section>

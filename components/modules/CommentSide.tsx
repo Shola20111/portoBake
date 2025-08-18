@@ -58,21 +58,41 @@ const datas = [
 
 
 const CommentSide = () => {
- const scrollRef = useRef(null)
+//  const scrollRef = useRef(null)
 
-  const prev = ()=>{
-    scrollRef.current.scrollTo({
-      left:scrollRef.current.scrollLeft - 410,
-      behavior: 'smooth'
-    })
-  }
+//   const prev = ()=>{
+//     scrollRef.current?.scrollTo({
+//       left:(scrollRef.current?.scrollLeft || 0) - 410,
+//       behavior: 'smooth'
+//     })
+//   }
 
-  const next = ()=>{
-    scrollRef.current.scrollTo({
-      left:scrollRef.current.scrollLeft + 410,
-      behavior: 'smooth'
-    })
-  }
+//   const next = ()=>{
+//     scrollRef.current?.scrollTo({
+//       left:(scrollRef.current?.scrollLeft || 0) + 410,
+//       behavior: 'smooth'
+//     })
+//   }
+
+const scrollRef = useRef<HTMLDivElement | null>(null);
+
+  const prev = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        left: scrollRef.current.scrollLeft - 410,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const next = () => {
+    if (scrollRef.current) {
+      scrollRef.current.scrollTo({
+        left: scrollRef.current.scrollLeft + 410,
+        behavior: "smooth",
+      });
+    }
+  };
 
   
   return (

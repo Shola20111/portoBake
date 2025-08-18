@@ -5,6 +5,8 @@ import Link from "next/link";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { MdClose } from "react-icons/md";
 import { Bebas_Neue } from 'next/font/google';
+import { VscChevronDown } from 'react-icons/vsc';
+import DropDown from './DropDown';
 
 
 
@@ -21,6 +23,18 @@ const [showNav, setShowNav] = useState(false)
 const handleShowNav = ()=>{
   setShowNav(!showNav)
 }
+
+const [openShop, setOpenShop] = useState(false)
+const handleOpenShop =()=>{
+  setOpenShop(!openShop)
+}
+
+const [openHelp, setOpenHelp] = useState(false)
+const handleOpenHelp =()=>{
+  setOpenHelp(!openHelp)
+}
+
+
 
 
 
@@ -40,13 +54,68 @@ const handleShowNav = ()=>{
             <li><Link href='/menu'>Menu</Link></li>
           
          
-            <li><Link href='/shop'>Shop</Link></li>
+            <li onClick={handleOpenShop} className={`flex justify-center items-center cursor-pointer ${openShop? 'py-3 px-1 rounded-t-2xl text-white bg-[#673b2b]': ''} relative`}>
+              <div>
+                Shop
+              </div>
+              <div>
+                <div className="w-3 h-3">
+                  <VscChevronDown className={`w-full h-full ${openShop? 'rotate-[180deg] bg-amber-800': ''} `}/>
+                </div>
+              </div>
+              {
+                openShop?
+                <ol className='flex flex-col justify-center w-[200px] h-auto bg-[#673B2B] absolute bottom-[-90] left-0'>
+                  <li>
+                    <Link href='/shop'></Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                </ol> :
+                ''
+              }  
+            </li>
           
          
             <li><Link href='/rewards'>Rewards</Link></li>
           
          
-            <li><Link href='/help'>Help</Link></li>
+            <li onClick={handleOpenHelp} className={`flex justify-center items-center cursor-pointer ${openHelp? 'py-3 px-1 rounded-t-2xl text-white bg-[#673b2b]': ''} relative`}>
+              <div>
+                Help
+              </div>
+              <div>
+                <div className="w-3 h-3">
+                  <VscChevronDown 
+                  className={`w-full h-full ${openHelp? 'rotate-[180deg] bg-amber-800': ''} `}/>
+                </div>
+              </div>
+              {
+                openHelp?
+                <ol className='flex flex-col justify-center w-[200px] h-auto bg-[#673B2B] absolute bottom-[-90] left-0'>
+                  <li>
+                    <Link href='/shop'></Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                  <li>
+                    <Link href='/shop'>Shop</Link>
+                  </li>
+                </ol> :
+                ''
+              }  
+            </li>
           
          
             <li><Link href='/corperate-orders'>Corporate Orders</Link></li>
